@@ -3,6 +3,8 @@
 
 <a href="https://codeclimate.com/github/maryshtd/frontend-project-lvl2/maintainability"><img src="https://api.codeclimate.com/v1/badges/51ef9c1c74d045a4ba3c/maintainability" /></a>
 
+<a href="https://codeclimate.com/github/maryshtd/frontend-project-lvl2/test_coverage"><img src="https://api.codeclimate.com/v1/badges/51ef9c1c74d045a4ba3c/test_coverage" /></a>
+
 ###Gendiff example
 
 [![asciicast](https://asciinema.org/a/aKmpwATjaoAHByorciUpieZKz.svg)](https://asciinema.org/a/aKmpwATjaoAHByorciUpieZKz)
