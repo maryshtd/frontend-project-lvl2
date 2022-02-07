@@ -1,6 +1,7 @@
 import * as fs from 'fs';
 import path from 'path';
 import _ from 'lodash';
+import parser from './parsers.js';
 
 const extractFormat = (filename) => path.extname(filename).slice(1);
 
@@ -9,13 +10,8 @@ const compareFiles = (filePath1, filePath2) => {
     const resolvedPath2 = path.resolve(process.cwd(), '__fixtures__', filePath2);
     const ext1 = extractFormat(resolvedPath1);
     const ext2 = extractFormat(resolvedPath2);
-    let data1 = {};
-    let data2 = {};
-    if (ext1 === ext2 && ext1 === 'json')
-    {    
-        data1 = JSON.parse(fs.readFileSync(resolvedPath1, 'utf-8'));
-        data2 = JSON.parse(fs.readFileSync(resolvedPath2, 'utf-8'));
-    }
+    let data1 = parser(fs.readFileSync(resolvedPath1, 'utf-8'), ext1);
+    let data2 = parser(fs.readFileSync(resolvedPath2, 'utf-8'), ext2);
 
     const keys = Object.keys({ ...data1, ...data2});
     const sortedKeys = _.sortBy(keys);

@@ -5,7 +5,9 @@
 
 <a href="https://codeclimate.com/github/maryshtd/frontend-project-lvl2/test_coverage"><img src="https://api.codeclimate.com/v1/badges/51ef9c1c74d045a4ba3c/test_coverage" /></a>
 
-###Gendiff example
-
+### Gendiff example
+### JSON
 [![asciicast](https://asciinema.org/a/aKmpwATjaoAHByorciUpieZKz.svg)](https://asciinema.org/a/aKmpwATjaoAHByorciUpieZKz)
 
+### YAML
+[![asciicast](https://asciinema.org/a/nudLagrOU6bhf7QB62mHGOHGe.svg)](https://asciinema.org/a/nudLagrOU6bhf7QB62mHGOHGe)
