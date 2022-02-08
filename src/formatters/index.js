@@ -7,6 +7,8 @@ const printDiff = (format, data) => {
             return stylish(data);
         case 'plain':
             return plain(data);
+        case 'json':
+            return JSON.stringify(data);
         default:
             throw new Error('Format is not supported');
     }

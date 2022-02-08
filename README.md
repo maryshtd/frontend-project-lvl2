@@ -17,3 +17,6 @@
 
 ### GENDIFF in plain format
 [![asciicast](https://asciinema.org/a/0SbhqfSE7y13j5ZtjCHdJ25wG.svg)](https://asciinema.org/a/0SbhqfSE7y13j5ZtjCHdJ25wG)
+
+### GENDIFF in JSON format
+[![asciicast](https://asciinema.org/a/0clrvdHfHrwyFbmbuD7dAVFjk.svg)](https://asciinema.org/a/0clrvdHfHrwyFbmbuD7dAVFjk)
