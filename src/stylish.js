@@ -15,7 +15,7 @@ const stringify = (value, depth) => {
 }
 
 
-const formatStylish = (comparison) => {
+const stylish = (comparison) => {
     const format = (data, depth) => {
         return data.map((item) => {
             const print = (value, depth, sign) => {
@@ -39,4 +39,4 @@ const formatStylish = (comparison) => {
     return `{\n${format(comparison, 1).join('')}}`;
 };
 
-export default formatStylish;
+export default stylish;
