@@ -11,3 +11,6 @@
 
 ### YAML
 [![asciicast](https://asciinema.org/a/nudLagrOU6bhf7QB62mHGOHGe.svg)](https://asciinema.org/a/nudLagrOU6bhf7QB62mHGOHGe)
+
+### GENDIFF for nested objects
+[![asciicast](https://asciinema.org/a/TiL4zlXlOqPYZf4vlY7ZsjQN2.svg)](https://asciinema.org/a/TiL4zlXlOqPYZf4vlY7ZsjQN2)
