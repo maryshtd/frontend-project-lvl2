@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import path from 'path';
 import getTree from './getTree.js'
-import stylish from './stylish.js'
+import printDiff from './formatters/index.js'
 import parser from './parsers.js';
 
 const extractFormat = (filename) => path.extname(filename).slice(1);
@@ -15,10 +15,7 @@ const compareFiles = (filePath1, filePath2, format = 'stylish') => {
     let data2 = parser(fs.readFileSync(resolvedPath2, 'utf-8'), ext2);
 
     const tree = getTree(data1, data2);
-    if (format === 'stylish') {
-        return stylish(tree);
-    }
-    return;
+    return printDiff(format, tree);
 };  
 
 export default compareFiles;
