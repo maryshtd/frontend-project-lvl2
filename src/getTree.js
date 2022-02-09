@@ -13,12 +13,12 @@ const getTree = (data1, data2) => {
       return { type: 'removed', key, value: value1 };
     }
     if (!_.has(data1, key)) {
-      return { 
+      return {
         type: 'added', key, value: value2,
       };
     }
     if (value1 !== value2) {
-      return { 
+      return {
         type: 'updated', key, value1, value2,
       };
     }
