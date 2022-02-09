@@ -4,13 +4,13 @@ import stylish from './stylish.js';
 const printDiff = (format, data) => {
   switch (format) {
     case 'stylish':
-        return stylish(data);
+      return stylish(data);
     case 'plain':
-        return plain(data);
+      return plain(data);
     case 'json':
-        return JSON.stringify(data);
+      return JSON.stringify(data);
     default:
-        throw new Error('Format is not supported');
+      throw new Error('Format is not supported');
   }
 };
 
