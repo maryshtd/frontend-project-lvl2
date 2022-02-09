@@ -9,31 +9,17 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
-const expectedResultStylish = fs.readFileSync(getFixturePath('resultStylish.txt'), 'utf-8');
-const expectedResultPlain = fs.readFileSync(getFixturePath('resultPlain.txt'), 'utf-8');
-const expectedResultJson = fs.readFileSync(getFixturePath('resultJson.txt'), 'utf-8');
 
+const cases = [
+  {fileName1: 'file1.json', fileName2: 'file2.json', expectedFixture: 'resultStylish.txt', format: 'stylish'},
+  {fileName1: 'file1.yml', fileName2: 'file2.yml', expectedFixture: 'resultStylish.txt', format: 'stylish'},
+  {fileName1: 'file1.json', fileName2: 'file2.json', expectedFixture: 'resultPlain.txt', format: 'plain'},
+  {fileName1: 'file1.yml', fileName2: 'file2.yml', expectedFixture: 'resultPlain.txt', format: 'plain'},
+  {fileName1: 'file1.json', fileName2: 'file2.json', expectedFixture: 'resultJson.txt', format: 'json'},
+  {fileName1: 'file1.yml', fileName2: 'file2.yml', expectedFixture: 'resultJson.txt', format: 'json'},
+]
 
-test('check difference in json - stylish', () => {
-    expect(compareFiles('file1.json','file2.json')).toEqual(expectedResultStylish);
-})
-
-test('check difference in yml - stylish', () => {
-  expect(compareFiles('file1.yml','file2.yml')).toEqual(expectedResultStylish);
-})
-
-test('check difference in json - plain', () => {
-  expect(compareFiles('file1.json','file2.json', 'plain')).toEqual(expectedResultPlain);
-})
-
-test('check difference in yml - plain', () => {
-  expect(compareFiles('file1.yml','file2.yml', 'plain')).toEqual(expectedResultPlain);
-})
-
-test('check difference in json - json', () => {
-  expect(compareFiles('file1.json','file2.json', 'json')).toEqual(expectedResultJson);
-})
-
-test('check difference in yml - json', () => {
-  expect(compareFiles('file1.yml','file2.yml', 'json')).toEqual(expectedResultJson);
+test.each(cases)('Compare $fileName1 and $fileName2 in $format format', ({fileName1, fileName2, expectedFixture, format}) => {
+  const expected = fs.readFileSync(getFixturePath(expectedFixture), 'utf-8');
+  expect(compareFiles(fileName1, fileName2, format)).toEqual(expected);
 })

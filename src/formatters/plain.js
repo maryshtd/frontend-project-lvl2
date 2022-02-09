@@ -1,20 +1,21 @@
-const plain = (comparison) => {
+const printValue = (value) => {
+    if (value === null) {
+        return null;
+    }
+    if (value === true || value === false) {
+        return value;
+    }
+    if (typeof value === 'object') {
+        return '[complex value]';
+    } 
+    return `'${value}'`;
+};
+
+const plain = (tree) => {
     const format = (data, parentName) => {
         return data.map((item) => {
             const printKey = parentName != '' ? `${parentName}.${item.key}` : item.key;
-            const printValue = (value) => {
-                if (value === null) {
-                    return null;
-                }
-                if (value === true || value === false) {
-                    return value;
-                }
-                if (typeof value === 'object') {
-                    return '[complex value]';
-                } 
-                return `'${value}'`;
-            };
-            switch (item.action) {
+            switch (item.type) {
                 case 'added':
                     return `Property '${printKey}' was added with value: ${printValue(item.value)}\n`;
                 case 'removed':
@@ -23,10 +24,14 @@ const plain = (comparison) => {
                     return `Property '${printKey}' was updated. From ${printValue(item.value1)} to ${printValue(item.value2)}\n`;
                 case 'children':
                     return format(item.children, printKey).join('');
+                case 'unchanged':
+                    return;
+                default:
+                    throw new Error(`Unknown type ${item.type}`);
             }
         })
     }
-    return format(comparison, '').join('');
+    return format(tree, '').join('');
 };
 
 export default plain;

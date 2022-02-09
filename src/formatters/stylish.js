@@ -15,14 +15,14 @@ const stringify = (value, depth) => {
 }
 
 
-const stylish = (comparison) => {
+const stylish = (tree) => {
     const format = (data, depth) => {
         return data.map((item) => {
             const print = (value, depth, sign) => {
                 const result = `${indent(depth)}${sign} ${item.key}: ${stringify(value, depth)}\n`;
                 return result;
             }
-            switch (item.action) {
+            switch (item.type) {
                 case 'unchanged':
                     return print(item.value, depth, ' ');
                 case 'added':
@@ -32,11 +32,13 @@ const stylish = (comparison) => {
                 case 'updated':
                     return `${print(item.value1, depth, '-')}${print(item.value2, depth, '+')}`;
                 case 'children':
-                    return `${indent(depth)}  ${item.key}: {\n${format(item.children, depth + 1).join('')}${indent(depth)}  }\n`
+                    return `${indent(depth)}  ${item.key}: {\n${format(item.children, depth + 1).join('')}${indent(depth)}  }\n`;
+                default:
+                    throw new Error(`Unknown type ${item.type}`);
             }
         });
     }
-    return `{\n${format(comparison, 1).join('')}}`;
+    return `{\n${format(tree, 1).join('')}}`;
 };
 
 export default stylish;
