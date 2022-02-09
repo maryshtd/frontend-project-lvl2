@@ -31,7 +31,7 @@ const cases = [
 ];
 
 test.each(cases)('Compare $fileName1 and $fileName2 in $format format', ({
-    fileName1, fileName2, expectedFixture, format,
+  fileName1, fileName2, expectedFixture, format,
 }) => {
   const expected = fs.readFileSync(getFixturePath(expectedFixture), 'utf-8');
   expect(compareFiles(fileName1, fileName2, format)).toEqual(expected);
