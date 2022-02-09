@@ -27,7 +27,7 @@ const plain = (tree) => {
           return `${format(item.children, printKey).join('\n')}`;
         default:
           throw new Error(`Unknown type ${item.type}`);
-      };
+      }
     });
   return format(tree, '').join('\n');
 };

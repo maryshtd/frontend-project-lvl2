@@ -21,19 +21,19 @@ const stylish = (tree) => {
       return result;
     };
     switch (item.type) {
-    case 'unchanged':
+      case 'unchanged':
         return print(item.value, depth, ' ');
-    case 'added':
+      case 'added':
         return print(item.value, depth, '+');
-    case 'removed':
+      case 'removed':
         return print(item.value, depth, '-');
-    case 'updated':
+      case 'updated':
         return `${print(item.value1, depth, '-')}${print(item.value2, depth, '+')}`;
-    case 'children':
+      case 'children':
         return `${indent(depth)}  ${item.key}: {\n${format(item.children, depth + 1).join('')}${indent(depth)}  }\n`;
-    default:
+      default:
         throw new Error(`Unknown type ${item.type}`);
-    };
+    }
   });
   return `{\n${format(tree, 1).join('')}}`;
 };
