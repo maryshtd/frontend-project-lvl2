@@ -28,9 +28,11 @@ const cases = [
   {
     fileName1: 'file1.yml', fileName2: 'file2.yml', expectedFixture: 'resultJson.txt', format: 'json',
   },
-]
+];
 
-test.each(cases)('Compare $fileName1 and $fileName2 in $format format', ({ fileName1, fileName2, expectedFixture, format }) => {
+test.each(cases)('Compare $fileName1 and $fileName2 in $format format', ({ 
+    fileName1, fileName2, expectedFixture, format 
+  }) => {
   const expected = fs.readFileSync(getFixturePath(expectedFixture), 'utf-8');
   expect(compareFiles(fileName1, fileName2, format)).toEqual(expected);
 });
