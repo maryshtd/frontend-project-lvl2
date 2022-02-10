@@ -1,9 +1,16 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/maryshtd/frontend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/maryshtd/frontend-project-lvl2/actions)
 
+[![Lint](https://github.com/maryshtd/frontend-project-lvl2/actions/workflows/make-lint.yml/badge.svg)](https://github.com/maryshtd/frontend-project-lvl2/actions/workflows/make-lint.yml)
+
 <a href="https://codeclimate.com/github/maryshtd/frontend-project-lvl2/maintainability"><img src="https://api.codeclimate.com/v1/badges/51ef9c1c74d045a4ba3c/maintainability" /></a>
 
 <a href="https://codeclimate.com/github/maryshtd/frontend-project-lvl2/test_coverage"><img src="https://api.codeclimate.com/v1/badges/51ef9c1c74d045a4ba3c/test_coverage" /></a>
+
+### Gendiff - это проект, который позволяет сравнить 2 файла и получить разницу между ними
+
+### Как установить и запустить приложение:
+[![asciicast](https://asciinema.org/a/KELYJh1fRujn71mDX18Ia9I1c.svg)](https://asciinema.org/a/KELYJh1fRujn71mDX18Ia9I1c)
 
 ### Gendiff example
 ### JSON

@@ -1,8 +1,8 @@
 import plain from './plain.js';
 import stylish from './stylish.js';
 
-const printDiff = (format, data) => {
-  switch (format) {
+const format = (formatName, data) => {
+  switch (formatName) {
     case 'stylish':
       return stylish(data);
     case 'plain':
@@ -14,4 +14,4 @@ const printDiff = (format, data) => {
   }
 };
 
-export default printDiff;
+export default format;

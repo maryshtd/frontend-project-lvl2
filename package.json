@@ -21,13 +21,15 @@
     "gendiff": "bin/gendiff.js"
   },
   "dependencies": {
-    "@jest/globals": "^27.5.1",
     "commander": "^8.3.0",
     "js-yaml": "^4.1.0",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "eslint": "^8.6.0",
+    "eslint": "^8.8.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jest": "^26.1.0",
     "jest": "^27.5.0"
   }
 }
